@@ -10,25 +10,21 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public abstract class ExcellColumn implements Comparable {
+public abstract class ExcellColumn implements Comparable<ExcellColumn> {
 
     private EventSignature eventSignature;
     protected Object[] values;
     protected String[] studentsNames;
-
 
     public abstract void createColumn(HSSFSheet sheet, int columnId);
 
     public abstract void parseColumn(HSSFSheet sheet, int columnId);
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(ExcellColumn o) {
         if (!(o instanceof ExcellColumn))
             throw new RuntimeException("Can't compare ExcellColumn.class with " + o.getClass().getSimpleName());
 
         return eventSignature.compareTo(((ExcellColumn) o).getEventSignature());
     }
-
-
-
 }

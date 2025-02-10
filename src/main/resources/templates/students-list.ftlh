@@ -2,47 +2,34 @@
 <style>
     *{
         font-size: 20px !important;
-
     }
 </style>
 <style>
     table, th, td {
-      border:1px solid black;
+     border: 2px solid #1e1a3d;
+    border-collapse: collapse;
     }
 </style>
 <style>
     table>*{
-
         margin: 4px 2px;
     }
 </style>
-<style>
-    .button {
-      border: none;
-      background-color: #008CBA;
-      color: white;
-      //padding: 15px 5px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      margin: 4px 2px;
-      border-radius: 25px;
-      height: 50px;
-      width: 408px;
-    }
 
-</style>
+<link rel="stylesheet" href="../styles/button.css">
+
 
 <body>
-    <table>
 
-        <tr>
+    <table >
+
+        <tr bgcolor="#5348b0">
             <#list events as event>
                 <th>${event.eventSignature.name}</th>
             </#list>
         </tr>
 
-        <tr>
+         <tr bgcolor="#5348b0">
             <#list events as event>
                 <#if event.eventSignature.date??>
                     <td>${event.eventSignature.date?date}</td>
@@ -52,11 +39,14 @@
             </#list>
         </tr>
         <#list events[0].values as x>
-            <tr align="left">
-
+            <#if x?index%2==0>
+            <tr align="left" bgcolor="#0561f5">
+            <#else >
+                <tr align="left" bgcolor="#73a7fa">
+            </#if>
                 <#list events as event>
                     <#if event.values[x?index]?is_string>
-                        <td>${event.values[x?index]}</td>
+                        <td >${event.values[x?index]}</td>
                     <#else>
                         <td>${event.values[x?index]?c}</td>
                     </#if>
@@ -65,6 +55,7 @@
         </#list>
     </table>
 <br>
+<div style="width: 408px">
 <button onclick="window.location.replace('/create-event')"
         class="button">Добавить/изменить мероприятие
 </button>
@@ -72,6 +63,15 @@
 <button onclick="window.location.replace('/load-excell-file')"
         class="button">Загрузить список группы
 </button>
+<br>
+<button onclick="window.location.replace('/correct-students-list')"
+        class="button">Редактировать список группы
+</button>
+<br>
+<button onclick="window.location.replace('/random-tickets')"
+        class="button">Раздать билеты
+</button>
+</div>
 </body>
 
 </html>

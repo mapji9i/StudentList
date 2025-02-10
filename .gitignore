@@ -1,18 +1,13 @@
+HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-
-### Eclipse ###
+!excell_files
+*.xls
+*.tar
+**/src/main/resources/application.properties
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -20,6 +15,12 @@ target/
 .settings
 .springBeans
 .sts4-cache
+*Dockerfile
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
 ### NetBeans ###
 /nbproject/private/
@@ -33,6 +34,7 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/resources/application.properties
+key
+key.pub
 
-### Mac OS ###
-.DS_Store

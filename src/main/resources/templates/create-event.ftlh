@@ -17,36 +17,9 @@
         *{
             font-size: 30% !important;
         }
-        .button {
-          border: none;
-          background-color: #008CBA;
-          color: white;
-          padding: 15px 5px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          margin: 4px 2px;
-          border-radius: 25px;
-          height: 10%;
-          width: 100%;
-        }
-        }
-        .button {
-          border: none;
-          background-color: #008CBA;
-          color: white;
-          padding: 15px 5px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          margin: 4px 2px;
-          border-radius: 25px;
-          height: 50px;
-          width: 100%;
-        }
-
 
     </style>
+    <link rel="stylesheet" href="../styles/button.css">
 </head>
 
 <body>

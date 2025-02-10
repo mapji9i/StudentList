@@ -1,20 +1,10 @@
 <html xmlns="http://www.w3.org/1999/html">
-
+<HEAD>
 <style>
     *{
     font-size: 20px;
 }
-.button {
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
 
-margin: 4px 2px;
-border-radius: 25px;
-}
 
 .MainDiv{
 width:408px;
@@ -27,8 +17,10 @@ width:408px;
 }
 
 </style>
-
+<link rel="stylesheet" href="../styles/button.css">
+</HEAD>
 <body>
+
 <div class="MainDiv">
 <form action="/load-excell-file" class="form" method="post" enctype="multipart/form-data">
     <label for="select-excell-file">Загрузите файл со списком группы</label>

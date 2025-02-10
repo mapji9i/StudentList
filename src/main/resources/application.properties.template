@@ -1,0 +1,6 @@
+spring.application.name=check
+
+spring.jackson.date-format: "dd-MM-yyyy"
+
+user.login={yourlogin}
+user.passwd={yourpass}

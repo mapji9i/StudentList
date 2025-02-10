@@ -46,15 +46,34 @@ public class MainController {
         return "students-list";
     }
 
+    @GetMapping("/correct-students-list")
+    private String correctStudentsList(Model model){
+        if(excellService.getColumns()==null) {
+            model.addAttribute("files", null);
+            return "load-excell-file";
+        }
+        model.addAttribute("studentsNames",excellService.getColumns().first());
+        return "correct-students-list";
+    }
+    @GetMapping("/random-tickets")
+    private String randomTickets(Model model){
+
+        String[] students=excellService.getStudentsNames();
+
+
+
+        model.addAttribute("students",students);
+        return "random-tickets";
+    }
     @GetMapping("/create-event")
     private String createEvent(Model model) {
         model.addAttribute("marksTypes", MarksType.values());
         ArrayList<EventSignature> eventSignatures = new ArrayList<>();
         if (excellService.getColumns().size() != 0){
-            Iterator iterator = excellService.getColumns().iterator();
+            Iterator<ExcellColumn> iterator = excellService.getColumns().iterator();
             iterator.next();
             while (iterator.hasNext()) {
-                eventSignatures.add(((ExcellColumn) iterator.next()).getEventSignature());
+                eventSignatures.add(iterator.next().getEventSignature());
             }
         }
         model.addAttribute("exsistEventsSignatures", eventSignatures);
